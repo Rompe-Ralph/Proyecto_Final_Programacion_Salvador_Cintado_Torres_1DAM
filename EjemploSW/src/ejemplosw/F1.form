@@ -62,8 +62,6 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                   <Component id="entrar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="jConsultar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="salir" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
@@ -81,7 +79,6 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="entrar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="salir" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jConsultar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
               </Group>
@@ -118,15 +115,6 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="salirMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="jConsultar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="CONSULTAR"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="consulta"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jConsultarActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

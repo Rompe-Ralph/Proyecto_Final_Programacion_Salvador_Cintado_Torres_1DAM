@@ -8,7 +8,6 @@ package ejemplosw;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 
-
 /**
  *
  * @author salva
@@ -253,11 +252,11 @@ public class Formulario extends javax.swing.JFrame {
     }//GEN-LAST:event_borrarActionPerformed
 
     private void guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardarMouseClicked
-          String dni = txtDni.getText();
-           int tam = dni.length();
-           //Recogemos el campos eleccionado por el usuario en un combobox
-           //y lo almacenamos en una variable para instanciar la clase persona
-           String tipoEn = (String)CBTipoEnfermedad.getSelectedItem();
+        String dni = txtDni.getText();
+        int tam = dni.length();
+        //Recogemos el campos eleccionado por el usuario en un combobox
+        //y lo almacenamos en una variable para instanciar la clase persona
+        String tipoEn = (String) CBTipoEnfermedad.getSelectedItem();
         String tipoG = (String) CBGravedad.getSelectedItem();
         int tipoGr = Integer.parseInt(tipoG);
         //Comprobamosq ue todos los campos esten introducidos
@@ -265,10 +264,10 @@ public class Formulario extends javax.swing.JFrame {
                 || txtNombreEnfermedad.equals("")) {
             JOptionPane.showMessageDialog(null, "Algún campo incompleto o DNI Incorrecto");
         } else {
-            int diasAprox=calcularDias(tipoEn,tipoGr);
-            String numDias=String.valueOf(diasAprox);
+            int diasAprox = calcularDias(tipoEn, tipoGr);
+            String numDias = String.valueOf(diasAprox);
             txtDias.setText(numDias);
-      
+
             sql modSql = new sql();
             //Clase Persona
             Persona mod = new Persona();
@@ -288,25 +287,34 @@ public class Formulario extends javax.swing.JFrame {
             try {
                 if (modSql.registro(mod)) { //Aqui guardo los registros en la base de datos 
                     JOptionPane.showMessageDialog(null, "Usuario creado correctamente!");
-
+                    limpiarRegistros();
                 }
-            }catch(SQLException ext){
+            } catch (SQLException ext) {
                 JOptionPane.showMessageDialog(null, "Ha habido un problema conectando a la base de datos!!");
 
             }
-            
+
         }
     }//GEN-LAST:event_guardarMouseClicked
 
     private void txtNombreEnfermedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreEnfermedadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreEnfermedadActionPerformed
-
+    //Aqui limpiamos todos los campos dejandolo vacios despues de guardarlo
+    public void limpiarRegistros() {
+        txtNombreEnfermedad.setText(" ");
+        txtNombre.setText("");
+        txtDni.setText("");
+        txtApellidos.setText("");
+        txtEdad.setValue(0);
+    }
     private void verDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verDatosMouseClicked
         String DNI = JOptionPane.showInputDialog("Introduce el DNI del paciente al que quieres consultar, por favor!");
-        consulta c = new consulta();
+        Consulta c = new Consulta(DNI);
         try {
             if (c.registro()) {
+                String mensaje = "<html><body>DATOS DEL DNI:<br> " + DNI + "<br> <br> Nombre: " + c.getNombre() + " <br> Enfermedad: " + c.getNombreEnfermedad() + "<br> Días de reposo: " + c.getDias() + "</body></html>";
+                JOptionPane.showMessageDialog(null, mensaje);
             }
         } catch (SQLException ext) {
             JOptionPane.showMessageDialog(null, "Ha habido un problema conectando a la base de datos!!");
@@ -347,7 +355,7 @@ public class Formulario extends javax.swing.JFrame {
             }
         });
     }
- 
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CBGravedad;
@@ -376,7 +384,6 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JButton verDatos;
     // End of variables declaration//GEN-END:variables
 
-    
     //Aqui calculamos el numero de dias segun la gravedad de la enfermedad
     private int calcularDias(String tipoEn, int tipoGr) {
 

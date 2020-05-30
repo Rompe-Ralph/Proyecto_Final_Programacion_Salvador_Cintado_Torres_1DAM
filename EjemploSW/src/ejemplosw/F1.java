@@ -37,7 +37,6 @@ public class F1 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         entrar = new javax.swing.JButton();
         salir = new javax.swing.JButton();
-        jConsultar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,18 +67,6 @@ public class F1 extends javax.swing.JFrame {
             }
         });
 
-        jConsultar.setText("CONSULTAR");
-        jConsultar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                consulta(evt);
-            }
-        });
-        jConsultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jConsultarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -93,8 +80,6 @@ public class F1 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addComponent(entrar)
-                .addGap(34, 34, 34)
-                .addComponent(jConsultar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(salir)
                 .addGap(41, 41, 41))
@@ -109,8 +94,7 @@ public class F1 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(entrar)
-                    .addComponent(salir)
-                    .addComponent(jConsultar))
+                    .addComponent(salir))
                 .addGap(57, 57, 57))
         );
 
@@ -147,14 +131,6 @@ public class F1 extends javax.swing.JFrame {
     private void salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirMouseClicked
         System.exit(0);//Para salir del programa
     }//GEN-LAST:event_salirMouseClicked
-
-    private void jConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConsultarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jConsultarActionPerformed
-
-    private void consulta(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consulta
-     
-    }//GEN-LAST:event_consulta
 
     /**
      * @param args the command line arguments
@@ -193,7 +169,6 @@ public class F1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton entrar;
-    private javax.swing.JButton jConsultar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
