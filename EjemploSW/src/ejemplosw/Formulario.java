@@ -215,9 +215,10 @@ public class Formulario extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(CBGravedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jDias)
-                    .addComponent(txtDias, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtDias, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(guardar)
@@ -283,7 +284,7 @@ public class Formulario extends javax.swing.JFrame {
             mod.setGravedad(tipoGr);
             mod.setDias(diasAprox);
 
-            
+            //Excepcion por si el usuario no se ha creado correctamente
             try {
                 if (modSql.registro(mod)) { //Aqui guardo los registros en la base de datos 
                     JOptionPane.showMessageDialog(null, "Usuario creado correctamente!");
