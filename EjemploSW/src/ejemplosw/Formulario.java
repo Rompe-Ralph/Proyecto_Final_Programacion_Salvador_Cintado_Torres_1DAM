@@ -46,7 +46,7 @@ public class Formulario extends javax.swing.JFrame {
         bMujer = new javax.swing.JCheckBox();
         bOtro = new javax.swing.JCheckBox();
         guardar = new javax.swing.JButton();
-        borrar = new javax.swing.JButton();
+        bSaliir = new javax.swing.JButton();
         verDatos = new javax.swing.JButton();
         txtNombre = new javax.swing.JTextField();
         CBTipoEnfermedad = new javax.swing.JComboBox<>();
@@ -91,10 +91,15 @@ public class Formulario extends javax.swing.JFrame {
             }
         });
 
-        borrar.setText("Borrar");
-        borrar.addActionListener(new java.awt.event.ActionListener() {
+        bSaliir.setText("Salir");
+        bSaliir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bSaliirMouseClicked(evt);
+            }
+        });
+        bSaliir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                borrarActionPerformed(evt);
+                bSaliirActionPerformed(evt);
             }
         });
 
@@ -140,7 +145,7 @@ public class Formulario extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNombreEnfermedad, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CBGravedad, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(borrar))))
+                            .addComponent(bSaliir))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(verDatos)
                 .addGap(174, 174, 174))
@@ -216,12 +221,11 @@ public class Formulario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jDias)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtDias, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtDias, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(guardar)
-                    .addComponent(borrar)
+                    .addComponent(bSaliir)
                     .addComponent(verDatos))
                 .addContainerGap())
         );
@@ -247,9 +251,9 @@ public class Formulario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtApellidosActionPerformed
 
-    private void borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarActionPerformed
+    private void bSaliirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSaliirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_borrarActionPerformed
+    }//GEN-LAST:event_bSaliirActionPerformed
 
     private void guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardarMouseClicked
         String dni = txtDni.getText();
@@ -321,6 +325,10 @@ public class Formulario extends javax.swing.JFrame {
 
         }    }//GEN-LAST:event_verDatosMouseClicked
 
+    private void bSaliirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bSaliirMouseClicked
+        System.exit(0);//Para salir del programa
+    }//GEN-LAST:event_bSaliirMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -363,7 +371,7 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JCheckBox bHombre;
     private javax.swing.JCheckBox bMujer;
     private javax.swing.JCheckBox bOtro;
-    private javax.swing.JButton borrar;
+    private javax.swing.JButton bSaliir;
     private javax.swing.JButton guardar;
     private javax.swing.JLabel jApellidos;
     private javax.swing.JLabel jDNI;

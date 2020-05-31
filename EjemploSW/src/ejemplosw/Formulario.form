@@ -56,7 +56,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txtNombreEnfermedad" min="-2" pref="129" max="-2" attributes="0"/>
                               <Component id="CBGravedad" alignment="0" min="-2" pref="43" max="-2" attributes="0"/>
-                              <Component id="borrar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="bSaliir" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -160,7 +160,7 @@
                   <EmptySpace pref="38" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="guardar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="borrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="bSaliir" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="verDatos" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -230,12 +230,13 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="guardarMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="borrar">
+        <Component class="javax.swing.JButton" name="bSaliir">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Borrar"/>
+            <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="borrarActionPerformed"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bSaliirMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSaliirActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="verDatos">
