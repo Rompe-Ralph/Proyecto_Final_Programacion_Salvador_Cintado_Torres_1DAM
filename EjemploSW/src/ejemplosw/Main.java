@@ -9,7 +9,7 @@ package ejemplosw;
  *
  * @author salva
  */
-public class EjemploSW {
+public class Main {
 
     /*salvaaa
      * @param args the command line arguments
