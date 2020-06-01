@@ -329,7 +329,8 @@ public class Formulario extends javax.swing.JFrame {
     private void bSaliirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bSaliirMouseClicked
         System.exit(0);//Para salir del programa
     }//GEN-LAST:event_bSaliirMouseClicked
-
+    
+    //En esta funcion instaciamos la clase enfermedad
     public void instanciarEnf(String tipoEn, int gravedad) {
         Enfermedades en = new Enfermedades(tipoEn);
         if (tipoEn.equals("Enfermedad Infecciosa"))  {
