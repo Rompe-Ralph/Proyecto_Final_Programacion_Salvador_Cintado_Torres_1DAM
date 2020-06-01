@@ -36,17 +36,4 @@ public class EnfermedadMusc extends Enfermedades{
         this.duracion = duracion;
     }
     
-    public int calcularDuracion (int getDuracion){
-        int duracionf = getDuracion();
-         if (gravedad == 1) {
-            duracionf = getDuracion  * 7;
-        } else if (gravedad == 2) {
-            duracionf = getDuracion  * 15;
-        } else if (gravedad == 3) {
-            duracionf = getDuracion  * 30;
-        } else {
-            JOptionPane.showMessageDialog(null, "No podemos hacer una aproximación de la duración cone sa gravedad");
-        }
-        return duracionf;
-    }
 }

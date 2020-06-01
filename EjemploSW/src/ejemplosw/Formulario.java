@@ -133,7 +133,7 @@ public class Formulario extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(130, Short.MAX_VALUE)
+                .addGap(130, 130, 130)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(guardar)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -141,19 +141,17 @@ public class Formulario extends javax.swing.JFrame {
                             .addComponent(jNombreEnfermedad)
                             .addComponent(jLabel2)
                             .addComponent(jDias))
-                        .addGap(37, 37, 37)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNombreEnfermedad, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CBGravedad, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bSaliir))))
+                            .addComponent(bSaliir)
+                            .addComponent(txtDias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(verDatos)
                 .addGap(174, 174, 174))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(228, 228, 228)
-                        .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(144, 144, 144)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -177,8 +175,8 @@ public class Formulario extends javax.swing.JFrame {
                                     .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(253, 253, 253)
-                        .addComponent(txtDias, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(205, 205, 205)
+                        .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -219,10 +217,10 @@ public class Formulario extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(CBGravedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDias)
-                    .addComponent(txtDias, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jDias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtDias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(guardar)
                     .addComponent(bSaliir)
@@ -263,6 +261,7 @@ public class Formulario extends javax.swing.JFrame {
         String tipoEn = (String) CBTipoEnfermedad.getSelectedItem();
         String tipoG = (String) CBGravedad.getSelectedItem();
         int tipoGr = Integer.parseInt(tipoG);
+
         //Comprobamosq ue todos los campos esten introducidos
         if (txtNombre.equals("") || txtApellidos.equals("") || txtDni.equals("") || tam < 9 || tam > 9
                 || txtNombreEnfermedad.equals("")) {
@@ -297,6 +296,8 @@ public class Formulario extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Ha habido un problema conectando a la base de datos!!");
 
             }
+            int gravedad = Integer.parseInt(tipoG);
+            instanciarEnf(tipoEn, gravedad);
 
         }
     }//GEN-LAST:event_guardarMouseClicked
@@ -305,7 +306,7 @@ public class Formulario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreEnfermedadActionPerformed
     //Aqui limpiamos todos los campos dejandolo vacios despues de guardarlo
-    public void limpiarRegistros() {
+    public  void limpiarRegistros() {
         txtNombreEnfermedad.setText(" ");
         txtNombre.setText("");
         txtDni.setText("");
@@ -328,6 +329,16 @@ public class Formulario extends javax.swing.JFrame {
     private void bSaliirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bSaliirMouseClicked
         System.exit(0);//Para salir del programa
     }//GEN-LAST:event_bSaliirMouseClicked
+
+    public void instanciarEnf(String tipoEn, int gravedad) {
+        Enfermedades en = new Enfermedades(tipoEn);
+        if (tipoEn.equals("Enfermedad Infecciosa"))  {
+            EnfermedadInfec eI = new EnfermedadInfec(en.getNombre(), gravedad); 
+        }
+        if (tipoEn.equals("Enfermedad Muscular")) {
+            EnfermedadMusc eM = new EnfermedadMusc(en.getNombre(), gravedad);
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -363,8 +374,36 @@ public class Formulario extends javax.swing.JFrame {
             }
         });
     }
+    //Aqui calculamos el numero de dias segun la gravedad de la enfermedad
+
+    private int calcularDias(String tipoEn, int tipoGr) {
+
+        int dias = 0;
+        if (tipoEn.equals("Enfermedad Infecciosa")) {
+            if (tipoGr == 1) {
+                dias = 7;
+            } else if (tipoGr == 2) {
+                dias = 14;
+            } else if (tipoGr == 3) {
+                dias = 30;
+            }
+        }
+        if (tipoEn.equals("Enfermedad Muscular")) {
+            if (tipoGr == 1) {
+                dias = 10;
+            } else if (tipoGr == 2) {
+                dias = 25;
+            } else if (tipoGr == 3) {
+                dias = 40;
+            }
+        }
+        return dias;
+
+    }
 
 
+
+        
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CBGravedad;
     private javax.swing.JComboBox<String> CBTipoEnfermedad;
@@ -391,30 +430,4 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreEnfermedad;
     private javax.swing.JButton verDatos;
     // End of variables declaration//GEN-END:variables
-
-    //Aqui calculamos el numero de dias segun la gravedad de la enfermedad
-    private int calcularDias(String tipoEn, int tipoGr) {
-
-        int dias = 0;
-        if (tipoEn.equals("Enfermedad Infecciosa")) {
-            if (tipoGr == 1) {
-                dias = 7;
-            } else if (tipoGr == 2) {
-                dias = 14;
-            } else if (tipoGr == 3) {
-                dias = 30;
-            }
-        }
-        if (tipoEn.equals("Enfermedad Muscular")) {
-            if (tipoGr == 1) {
-                dias = 10;
-            } else if (tipoGr == 2) {
-                dias = 25;
-            } else if (tipoGr == 3) {
-                dias = 40;
-            }
-        }
-        return dias;
-    }
-
 }

@@ -9,14 +9,15 @@ package ejemplosw;
  *
  * @author salva
  */
-public abstract class Enfermedades {
+public  class Enfermedades {
     private String nombre;
+    
+    
 
     public Enfermedades(String nombre) {
         this.nombre = nombre;
     }
     
-    public abstract int calcularDuracion (int duracion);
 
 
     public String getNombre() {
