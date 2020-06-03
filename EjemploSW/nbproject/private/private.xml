@@ -3,9 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/salva/OneDrive/Documentos/GITHUB/Proyecto_Final_Programacion_Salvador_Cintado_Torres_1DAM/EjemploSW/src/ejemplosw/Inicio.java</file>
-            <file>file:/C:/Users/salva/OneDrive/Documentos/GITHUB/Proyecto_Final_Programacion_Salvador_Cintado_Torres_1DAM/EjemploSW/src/ejemplosw/Consulta.java</file>
-            <file>file:/C:/Users/salva/OneDrive/Documentos/GITHUB/Proyecto_Final_Programacion_Salvador_Cintado_Torres_1DAM/EjemploSW/src/ejemplosw/Formulario.java</file>
+            <file>file:/C:/Users/salva/OneDrive/Documentos/GITHUB/Proyecto_Final_Programacion_Salvador_Cintado_Torres_1DAM/EjemploSW/src/Clases/Enfermedades.java</file>
+            <file>file:/C:/Users/salva/OneDrive/Documentos/GITHUB/Proyecto_Final_Programacion_Salvador_Cintado_Torres_1DAM/EjemploSW/src/Clases/Conexion.java</file>
+            <file>file:/C:/Users/salva/OneDrive/Documentos/GITHUB/Proyecto_Final_Programacion_Salvador_Cintado_Torres_1DAM/EjemploSW/src/Clases/EnfermedadMusc.java</file>
+            <file>file:/C:/Users/salva/OneDrive/Documentos/GITHUB/Proyecto_Final_Programacion_Salvador_Cintado_Torres_1DAM/EjemploSW/src/Clases/Consulta.java</file>
+            <file>file:/C:/Users/salva/OneDrive/Documentos/GITHUB/Proyecto_Final_Programacion_Salvador_Cintado_Torres_1DAM/EjemploSW/src/Clases/EnfermedadInfec.java</file>
+            <file>file:/C:/Users/salva/OneDrive/Documentos/GITHUB/Proyecto_Final_Programacion_Salvador_Cintado_Torres_1DAM/EjemploSW/src/Clases/sql.java</file>
+            <file>file:/C:/Users/salva/OneDrive/Documentos/GITHUB/Proyecto_Final_Programacion_Salvador_Cintado_Torres_1DAM/EjemploSW/src/JFrame/Formulario.java</file>
+            <file>file:/C:/Users/salva/OneDrive/Documentos/GITHUB/Proyecto_Final_Programacion_Salvador_Cintado_Torres_1DAM/EjemploSW/src/JFrame/Inicio.java</file>
         </group>
     </open-files>
 </project-private>

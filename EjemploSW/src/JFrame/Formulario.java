@@ -3,8 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejemplosw;
+package JFrame;
 
+import ejemplosw.Consulta;
+import ejemplosw.EnfermedadInfec;
+import ejemplosw.EnfermedadMusc;
+import ejemplosw.Enfermedades;
+import ejemplosw.Persona;
+import ejemplosw.sql;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 
@@ -312,6 +318,10 @@ public class Formulario extends javax.swing.JFrame {
         txtDni.setText("");
         txtApellidos.setText("");
         txtEdad.setValue(0);
+        txtDias.setText("");
+        bHombre.setSelected(false);
+        bMujer.setSelected(false);
+        bOtro.setSelected(false);
     }
     private void verDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verDatosMouseClicked
         String DNI = JOptionPane.showInputDialog("Introduce el DNI del paciente al que quieres consultar, por favor!");
@@ -388,8 +398,8 @@ public class Formulario extends javax.swing.JFrame {
             } else if (tipoGr == 3) {
                 dias = 30;
             }
-        }
-        if (tipoEn.equals("Enfermedad Muscular")) {
+        } else {
+       
             if (tipoGr == 1) {
                 dias = 10;
             } else if (tipoGr == 2) {
@@ -397,8 +407,9 @@ public class Formulario extends javax.swing.JFrame {
             } else if (tipoGr == 3) {
                 dias = 40;
             }
+        
         }
-        return dias;
+                return dias;
 
     }
 

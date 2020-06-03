@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
+ *  En esta clase realizaremos la conexion con la base de datos
  * @author salva
  */
 public class Conexion {
