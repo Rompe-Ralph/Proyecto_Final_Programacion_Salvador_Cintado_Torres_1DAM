@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import java.sql.SQLException;
 
 /**
- *
+ * Este jframe es la parte fundamental del programa ya que aqui se recoge los datos y se consulta
  * @author salva
  */
 public class Formulario extends javax.swing.JFrame {
@@ -25,8 +25,8 @@ public class Formulario extends javax.swing.JFrame {
      */
     public Formulario() {
         initComponents();
-        setLocationRelativeTo(null);
-        setTitle("Agenda - Salva");
+        setLocationRelativeTo(null); //Poner la pantalla del programa en el medio
+        setTitle("Agenda - Salva"); //Esta parae sirver para poner "Agenda-Salva en la parte superior del jframe"
 
     }
 
@@ -274,10 +274,11 @@ public class Formulario extends javax.swing.JFrame {
         String tipoG = (String) CBGravedad.getSelectedItem();
         int tipoGr = Integer.parseInt(tipoG);
 
-        //Comprobamosq ue todos los campos esten introducidos
+        //Comprobamos que todos los campos esten introducidos
         if (txtNombre.equals("") || txtApellidos.equals("") || txtDni.equals("") || tam < 9 || tam > 9
                 || txtNombreEnfermedad.equals("")) {
-            JOptionPane.showMessageDialog(null, "Algún campo incompleto o DNI Incorrecto");
+            JOptionPane.showMessageDialog(null, "Algún campo incompleto o DNI Incorrecto"); //En el caso de que no haya ningun campo o solamente un campo no rellenado 
+                                                                                            //te saltara este mensaje
         } else {
             int diasAprox = calcularDias(tipoEn, tipoGr);
             String numDias = String.valueOf(diasAprox);
@@ -330,10 +331,13 @@ public class Formulario extends javax.swing.JFrame {
         bOtro.setSelected(false);
     }
     private void verDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verDatosMouseClicked
+        //En el programa esta parte le corresponde a la consulta de la base de datos pero
+        //el dni que queramos consultar debera estar introducido
         String DNI = JOptionPane.showInputDialog("Introduce el DNI del paciente al que quieres consultar, por favor!");
         Consulta c = new Consulta(DNI);
         try {
             if (c.registro()) {
+                //Aqui mostramos los datos correspondientes al dni que hemos introducido
                 String mensaje = "<html><body>DATOS DEL DNI:<br> " + DNI + "<br> <br> Nombre: " + c.getNombre() + " <br> Enfermedad: " + c.getNombreEnfermedad() + "<br> Días de reposo: " + c.getDias() + "</body></html>";
                 JOptionPane.showMessageDialog(null, mensaje);
             }

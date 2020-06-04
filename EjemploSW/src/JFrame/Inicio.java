@@ -6,7 +6,7 @@
 package JFrame;
 
 /**
- *
+ * Este jFrame en el inicial en el que decidiremos si entrar en la agenda o salir
  * @author salva
  */
 public class Inicio extends javax.swing.JFrame {
@@ -17,7 +17,7 @@ public class Inicio extends javax.swing.JFrame {
     public Inicio() {
         initComponents();
         setLocationRelativeTo(null); //Poner la pantalla del programa en el medio
-        setTitle("Agenda - Salva");
+        setTitle("Agenda - Salva"); //Esta parae sirver para poner "Agenda-Salva en la parte superior del jframe"
 
 
     }

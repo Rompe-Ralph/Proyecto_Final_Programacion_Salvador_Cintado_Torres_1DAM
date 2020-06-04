@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * En esta clase esta relacionada con la inserccion de registros en la base de datos 
  * @author salva
  */
 public class sql extends Conexion{

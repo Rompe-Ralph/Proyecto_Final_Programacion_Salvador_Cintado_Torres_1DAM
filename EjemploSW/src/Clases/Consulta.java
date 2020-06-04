@@ -8,7 +8,7 @@ import static java.lang.String.valueOf;
 import java.util.logging.*;
 import java.sql.*;
 /**
- *
+ * En esta clase consultaremos los datos seleccionados segun el DNI que introduzcamos en el programa
  * @author salva
  */
 public class Consulta extends Conexion {
