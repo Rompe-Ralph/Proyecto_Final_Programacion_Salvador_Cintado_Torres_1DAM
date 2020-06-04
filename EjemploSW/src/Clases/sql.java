@@ -23,7 +23,7 @@ public class sql extends Conexion{
         String sql = "INSERT INTO formulario (nombre,apellidos,edad,dni,hombre,mujer,otro,tipoEnfermedad,nombreEnfermedad,gravedad,dias) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
         try {
-
+            //Aqui accedemos a las columnas de la base de datos y va insertando los valores segun la instacia de la clase persona y enfermedad
             ps = con.prepareStatement(sql);
             ps.setString(1, usr.getNombre());
             ps.setString(2, usr.getApellidos());
